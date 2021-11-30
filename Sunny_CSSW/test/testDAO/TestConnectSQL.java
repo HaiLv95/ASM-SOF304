@@ -2,6 +2,9 @@ package testDAO;
 
 import org.testng.annotations.Test;
 
+import sunnycssw.DAO.ConnectSQL;
+
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.io.File;
@@ -9,6 +12,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -20,16 +24,17 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 
 public class TestConnectSQL {
-	String url;
-	String user;
-	String pass;
-	Connection connection;
+	
+	ConnectSQL connect = new ConnectSQL();
 	Map<String, Object> testResult;
 	HSSFWorkbook workbook;
 	HSSFSheet sheet;
+	
 	@BeforeClass
 	public void setUpTest() {
 		workbook = new HSSFWorkbook();
@@ -37,25 +42,52 @@ public class TestConnectSQL {
 		testResult = new LinkedHashMap<String, Object>();
 		testResult.put("1", new Object[] { "Testcase Name", "Testing Purpose", "Expected Output", "Actual Output" });
 	}
-	@Parameters({"host","user", "pass", "db", "port"})
+	
+	@AfterTest
+	public void AfterTest() {
+		connect.pass = null;
+		connect.user = null;
+	}
+	
+	@Parameters({"user", "pass"})
 	@Test
-	public void TCDB_TC001_Success(String host, String user, String pass, String db, String port) {
+	public void TCDB_TC001_Success(String user, String pass) {
 		try {
-			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			url = "jdbc:sqlserver://" + host + ":" + port + ";databaseName=" + db;
-			this.user = user;
-			this.pass = pass;
-			connection = DriverManager.getConnection(url, user, pass);
+			connect.user = user;
+			connect.pass = pass;
+			Connection connection = connect.Connect();
+			System.out.println("Connect success : " + connection);
 			assertTrue(connection != null);
-			testResult.put("2", new Object[] { "CDB_TC001_ConectSuccess", "Database connection",
+			testResult.put("2", new Object[] { "TCDB_TC001_ConectSuccess", "Database connection",
 					"Database connection successful", "Pass" });
+			connection.close();
 		} catch (Exception e) {
-			testResult.put("2", new Object[] { "CDB_TC001_ConectSuccess", "Database connection",
+			testResult.put("2", new Object[] { "TCDB_TC001_ConectSuccess", "Database connection",
 					"Database connection successful", "Fail" });
 		}
 	}
+	
+	@Parameters({"userF", "passF"})
+	@Test
+	public void TCDB_TC002_Failed(String userF, String passF) {
+		try {
+			connect.user = userF;
+			connect.pass = passF;
+			Connection connection = connect.Connect();
+			System.out.println("Connect failed : "+ connection);
+			assertEquals(connection, null);
+			testResult.put("2", new Object[] { "TCDB_TC002_Failed", "Connection null",
+					"Connection null", "Pass" });
+			connection.close();;
+		} catch (Exception e) {
+			testResult.put("2", new Object[] { "TCDB_TC002_Failed", "Connection null",
+					"Connection null", "Failed" });
+		}
+	}
+	
 	@AfterClass
-	public void tearDown() {
+	public void tearDown(){
+		
 		Set<String> keySet = testResult.keySet();
 		int index = 0;
 		for (String key : keySet) {

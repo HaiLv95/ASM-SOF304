@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="Suite">
   <test name="TestNGConectDatabase">
-  <parameter name="host" value="localhost"></parameter>
   	<parameter name="user" value="sa"></parameter>
   	<parameter name="pass" value="1"></parameter>
-  	<parameter name="db" value="QLSUNNY"></parameter>
-  	<parameter name="port" value="1433"></parameter>
+  	<parameter name="userF" value="sa"></parameter>
+  	<parameter name="passF" value="34"></parameter>
     <classes>
       <class name="testDAO.TestConnectSQL"/>
     </classes>

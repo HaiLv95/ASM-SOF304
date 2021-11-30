@@ -48,6 +48,7 @@ public class ConnectSQL {
         } catch (UnknownHostException ex) {
             JOptionPane.showMessageDialog(null, "Failed: Not foud localhost");
         } catch (Exception e) {
+        	con = null;
             JOptionPane.showMessageDialog(null, "Failed: Lỗi kết nối CSDL: " + e);
         }
         return con;

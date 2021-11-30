@@ -3,16 +3,16 @@
 <suite name="Failed suite [Suite]">
   <test thread-count="5" name="TestNGConectDatabase(failed)">
     <parameter name="pass" value="1"/>
-    <parameter name="port" value="1433"/>
-    <parameter name="host" value="localhost"/>
     <parameter name="user" value="sa"/>
-    <parameter name="db" value="QLSUNNY"/>
+    <parameter name="userF" value="sa"/>
+    <parameter name="passF" value="34"/>
     <classes>
       <class name="testDAO.TestConnectSQL">
         <methods>
           <include name="tearDown"/>
-          <include name="TCDB_TC001_Success"/>
           <include name="setUpTest"/>
+          <include name="AfterTest"/>
+          <include name="TCDB_TC002_Failed" invocation-numbers="0"/>
         </methods>
       </class> <!-- testDAO.TestConnectSQL -->
     </classes>
