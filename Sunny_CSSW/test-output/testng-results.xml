@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-11-30T20:49:45 ICT" name="Suite" finished-at="2021-11-30T20:49:47 ICT" duration-ms="1905">
+  <suite started-at="2021-11-30T23:37:16 ICT" name="Suite" finished-at="2021-11-30T23:37:21 ICT" duration-ms="5166">
     <groups>
     </groups>
-    <test started-at="2021-11-30T20:49:45 ICT" name="TestNGConectDatabase" finished-at="2021-11-30T20:49:47 ICT" duration-ms="1905">
+    <test started-at="2021-11-30T23:37:16 ICT" name="TestNGConectDatabase" finished-at="2021-11-30T23:37:21 ICT" duration-ms="5166">
       <class name="testDAO.TestConnectSQL">
-        <test-method is-config="true" signature="setUpTest()[pri:0, instance:testDAO.TestConnectSQL@b3ca52e]" started-at="2021-11-30T20:49:45 ICT" name="setUpTest" finished-at="2021-11-30T20:49:46 ICT" duration-ms="106" status="PASS">
+        <test-method is-config="true" signature="setUpTest()[pri:0, instance:testDAO.TestConnectSQL@710f4dc7]" started-at="2021-11-30T23:37:16 ICT" name="setUpTest" finished-at="2021-11-30T23:37:16 ICT" duration-ms="114" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpTest -->
-        <test-method signature="TCDB_TC001_Success(java.lang.String,java.lang.String)[pri:0, instance:testDAO.TestConnectSQL@b3ca52e]" started-at="2021-11-30T20:49:46 ICT" name="TCDB_TC001_Success" finished-at="2021-11-30T20:49:46 ICT" duration-ms="365" status="PASS">
+        <test-method signature="TCDB_TC001_Success(java.lang.String,java.lang.String)[pri:0, instance:testDAO.TestConnectSQL@710f4dc7]" started-at="2021-11-30T23:37:16 ICT" name="TCDB_TC001_Success" finished-at="2021-11-30T23:37:17 ICT" duration-ms="457" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,7 +27,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TCDB_TC001_Success -->
-        <test-method signature="TCDB_TC002_Failed(java.lang.String,java.lang.String)[pri:0, instance:testDAO.TestConnectSQL@b3ca52e]" started-at="2021-11-30T20:49:46 ICT" name="TCDB_TC002_Failed" finished-at="2021-11-30T20:49:47 ICT" duration-ms="1359" status="PASS">
+        <test-method signature="TCDB_TC002_PasswordNull(java.lang.String,java.lang.String)[pri:0, instance:testDAO.TestConnectSQL@710f4dc7]" started-at="2021-11-30T23:37:17 ICT" name="TCDB_TC002_PasswordNull" finished-at="2021-11-30T23:37:18 ICT" duration-ms="1560" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[sa]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TCDB_TC002_PasswordNull -->
+        <test-method signature="TCDB_TC003_PasswordFalse(java.lang.String,java.lang.String)[pri:0, instance:testDAO.TestConnectSQL@710f4dc7]" started-at="2021-11-30T23:37:18 ICT" name="TCDB_TC003_PasswordFalse" finished-at="2021-11-30T23:37:19 ICT" duration-ms="807" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -42,12 +58,44 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TCDB_TC002_Failed -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testDAO.TestConnectSQL@b3ca52e]" started-at="2021-11-30T20:49:47 ICT" name="tearDown" finished-at="2021-11-30T20:49:47 ICT" duration-ms="42" status="PASS">
+        </test-method> <!-- TCDB_TC003_PasswordFalse -->
+        <test-method signature="TCDB_TC004_UserFalse(java.lang.String,java.lang.String)[pri:0, instance:testDAO.TestConnectSQL@710f4dc7]" started-at="2021-11-30T23:37:19 ICT" name="TCDB_TC004_UserFalse" finished-at="2021-11-30T23:37:20 ICT" duration-ms="862" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[das]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TCDB_TC004_UserFalse -->
+        <test-method signature="TCDB_TC005_UserNull(java.lang.String,java.lang.String)[pri:0, instance:testDAO.TestConnectSQL@710f4dc7]" started-at="2021-11-30T23:37:20 ICT" name="TCDB_TC005_UserNull" finished-at="2021-11-30T23:37:21 ICT" duration-ms="1261" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TCDB_TC005_UserNull -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testDAO.TestConnectSQL@710f4dc7]" started-at="2021-11-30T23:37:21 ICT" name="tearDown" finished-at="2021-11-30T23:37:21 ICT" duration-ms="61" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="AfterTest()[pri:0, instance:testDAO.TestConnectSQL@b3ca52e]" started-at="2021-11-30T20:49:47 ICT" name="AfterTest" finished-at="2021-11-30T20:49:47 ICT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="AfterTest()[pri:0, instance:testDAO.TestConnectSQL@710f4dc7]" started-at="2021-11-30T23:37:21 ICT" name="AfterTest" finished-at="2021-11-30T23:37:21 ICT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterTest -->

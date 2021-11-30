@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -109,7 +109,22 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="testDAO.TestConnectSQL" class="method navigator-link" hash-for-method="TCDB_TC002_Failed(sa, 34)">TCDB_TC002_Failed(sa, 34)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="testDAO.TestConnectSQL" class="method navigator-link" hash-for-method="TCDB_TC002_PasswordNull(sa, )">TCDB_TC002_PasswordNull(sa, )</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="testDAO.TestConnectSQL" class="method navigator-link" hash-for-method="TCDB_TC003_PasswordFalse(sa, 34)">TCDB_TC003_PasswordFalse(sa, 34)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="testDAO.TestConnectSQL" class="method navigator-link" hash-for-method="TCDB_TC004_UserFalse(das, 1)">TCDB_TC004_UserFalse(das, 1)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="testDAO.TestConnectSQL" class="method navigator-link" hash-for-method="TCDB_TC005_UserNull(, 1)">TCDB_TC005_UserNull(, 1)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -140,10 +155,34 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="TCDB_TC002_Failed(sa, 34)">
-                  </a> <!-- TCDB_TC002_Failed(sa, 34) -->
-                  <span class="method-name">TCDB_TC002_Failed</span>
+                  <a name="TCDB_TC002_PasswordNull(sa, )">
+                  </a> <!-- TCDB_TC002_PasswordNull(sa, ) -->
+                  <span class="method-name">TCDB_TC002_PasswordNull</span>
+                  <span class="parameters">(sa, )</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TCDB_TC003_PasswordFalse(sa, 34)">
+                  </a> <!-- TCDB_TC003_PasswordFalse(sa, 34) -->
+                  <span class="method-name">TCDB_TC003_PasswordFalse</span>
                   <span class="parameters">(sa, 34)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TCDB_TC004_UserFalse(das, 1)">
+                  </a> <!-- TCDB_TC004_UserFalse(das, 1) -->
+                  <span class="method-name">TCDB_TC004_UserFalse</span>
+                  <span class="parameters">(das, 1)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TCDB_TC005_UserNull(, 1)">
+                  </a> <!-- TCDB_TC005_UserNull(, 1) -->
+                  <span class="method-name">TCDB_TC005_UserNull</span>
+                  <span class="parameters">(, 1)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -160,9 +199,11 @@
 &lt;suite name=&quot;Suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;TestNGConectDatabase&quot;&gt;
     &lt;parameter name=&quot;pass&quot; value=&quot;1&quot;/&gt;
+    &lt;parameter name=&quot;userNull&quot; value=&quot;&quot;/&gt;
     &lt;parameter name=&quot;user&quot; value=&quot;sa&quot;/&gt;
-    &lt;parameter name=&quot;userF&quot; value=&quot;sa&quot;/&gt;
+    &lt;parameter name=&quot;userF&quot; value=&quot;das&quot;/&gt;
     &lt;parameter name=&quot;passF&quot; value=&quot;34&quot;/&gt;
+    &lt;parameter name=&quot;passNull&quot; value=&quot;&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;testDAO.TestConnectSQL&quot;/&gt;
     &lt;/classes&gt;
@@ -204,20 +245,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TCDB_TC002_Failed')
+data.setCell(0, 1, 'TCDB_TC002_PasswordNull')
 data.setCell(0, 2, 'testDAO.TestConnectSQL')
-data.setCell(0, 3, 1359);
+data.setCell(0, 3, 1560);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'TCDB_TC001_Success')
+data.setCell(1, 1, 'TCDB_TC005_UserNull')
 data.setCell(1, 2, 'testDAO.TestConnectSQL')
-data.setCell(1, 3, 365);
+data.setCell(1, 3, 1261);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'TCDB_TC004_UserFalse')
+data.setCell(2, 2, 'testDAO.TestConnectSQL')
+data.setCell(2, 3, 862);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'TCDB_TC003_PasswordFalse')
+data.setCell(3, 2, 'testDAO.TestConnectSQL')
+data.setCell(3, 3, 807);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'TCDB_TC001_Success')
+data.setCell(4, 2, 'testDAO.TestConnectSQL')
+data.setCell(4, 3, 457);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 seconds</span>
+              <span class="suite-total-time">Total running time: 4 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -250,19 +303,31 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">TCDB_TC001_Success(sa, 1)</span>
-                <span class="method-start">114 ms</span>
+                <span class="method-start">123 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">TCDB_TC002_Failed(sa, 34)</span>
-                <span class="method-start">484 ms</span>
+                <span class="method-name">TCDB_TC002_PasswordNull(sa, )</span>
+                <span class="method-start">584 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TCDB_TC003_PasswordFalse(sa, 34)</span>
+                <span class="method-start">2146 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TCDB_TC004_UserFalse(das, 1)</span>
+                <span class="method-start">2954 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TCDB_TC005_UserNull(, 1)</span>
+                <span class="method-start">3819 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">1845 ms</span>
+                <span class="method-start">5084 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-test after">
                 <span class="method-name">AfterTest</span>
-                <span class="method-start">1890 ms</span>
+                <span class="method-start">5147 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

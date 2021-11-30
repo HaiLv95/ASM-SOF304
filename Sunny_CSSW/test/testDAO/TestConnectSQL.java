@@ -67,12 +67,63 @@ public class TestConnectSQL {
 		}
 	}
 	
-	@Parameters({"userF", "passF"})
+	@Parameters({"user", "passNull"})
 	@Test
-	public void TCDB_TC002_Failed(String userF, String passF) {
+	public void TCDB_TC002_PasswordNull(String user, String passNull) {
+		try {
+			connect.user = user;
+			connect.pass = passNull;
+			Connection connection = connect.Connect();
+			System.out.println("Connect failed : "+ connection);
+			assertEquals(connection, null);
+			testResult.put("2", new Object[] { "TCDB_TC002_Failed", "Connection null",
+					"Connection null", "Pass" });
+			connection.close();;
+		} catch (Exception e) {
+			testResult.put("2", new Object[] { "TCDB_TC002_Failed", "Connection null",
+					"Connection null", "Failed" });
+		}
+	}
+	@Parameters({"user", "passF"})
+	@Test
+	public void TCDB_TC003_PasswordFalse(String user, String passF) {
+		try {
+			connect.user = user;
+			connect.pass = passF;
+			Connection connection = connect.Connect();
+			System.out.println("Connect failed : "+ connection);
+			assertEquals(connection, null);
+			testResult.put("2", new Object[] { "TCDB_TC002_Failed", "Connection null",
+					"Connection null", "Pass" });
+			connection.close();;
+		} catch (Exception e) {
+			testResult.put("2", new Object[] { "TCDB_TC002_Failed", "Connection null",
+					"Connection null", "Failed" });
+		}
+	}
+	@Parameters({"userF", "pass"})
+	@Test
+	public void TCDB_TC004_UserFalse(String userF, String pass) {
 		try {
 			connect.user = userF;
-			connect.pass = passF;
+			connect.pass = pass;
+			Connection connection = connect.Connect();
+			System.out.println("Connect failed : "+ connection);
+			assertEquals(connection, null);
+			testResult.put("2", new Object[] { "TCDB_TC002_Failed", "Connection null",
+					"Connection null", "Pass" });
+			connection.close();;
+		} catch (Exception e) {
+			testResult.put("2", new Object[] { "TCDB_TC002_Failed", "Connection null",
+					"Connection null", "Failed" });
+		}
+	}
+	@Parameters({"userNull", "pass"})
+	@Test
+	public void TCDB_TC005_UserNull(String userNull, String pass) {
+		try {
+			connect.user = userNull;
+			connect.pass = pass;
 			Connection connection = connect.Connect();
 			System.out.println("Connect failed : "+ connection);
 			assertEquals(connection, null);

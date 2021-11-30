@@ -3,8 +3,10 @@
   <test name="TestNGConectDatabase">
   	<parameter name="user" value="sa"></parameter>
   	<parameter name="pass" value="1"></parameter>
-  	<parameter name="userF" value="sa"></parameter>
+  	<parameter name="userF" value="das"></parameter>
   	<parameter name="passF" value="34"></parameter>
+  	<parameter name="userNull" value=""></parameter>
+  	<parameter name="passNull" value=""></parameter>
     <classes>
       <class name="testDAO.TestConnectSQL"/>
     </classes>
