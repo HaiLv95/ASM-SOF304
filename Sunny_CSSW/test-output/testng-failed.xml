@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <test thread-count="5" name="TestNGConectDatabase(failed)">
+    <parameter name="pass" value="1"/>
+    <parameter name="port" value="1433"/>
+    <parameter name="host" value="localhost"/>
+    <parameter name="user" value="sa"/>
+    <parameter name="db" value="QLSUNNY"/>
+    <classes>
+      <class name="testDAO.TestConnectSQL">
+        <methods>
+          <include name="tearDown"/>
+          <include name="TCDB_TC001_Success"/>
+          <include name="setUpTest"/>
+        </methods>
+      </class> <!-- testDAO.TestConnectSQL -->
+    </classes>
+  </test> <!-- TestNGConectDatabase(failed) -->
+</suite> <!-- Failed suite [Suite] -->
