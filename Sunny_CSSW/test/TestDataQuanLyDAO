@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+  <test name="TestQuanLyDAO">
+  	<parameter name="ID" value="hailv"></parameter>
+  	<parameter name="IDNull" value=""></parameter>
+  	<parameter name="IDSp" value="1"></parameter>
+  	<parameter name="IDSpFailed" value="0"></parameter>
+    <classes>
+      <class name="testDAO.TestQuanLyDAO"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -2,104 +2,46 @@
 <testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-11-30T23:37:16 ICT" name="Suite" finished-at="2021-11-30T23:37:21 ICT" duration-ms="5166">
+  <suite started-at="2021-12-01T16:47:20 ICT" name="Suite" finished-at="2021-12-01T16:47:21 ICT" duration-ms="631">
     <groups>
     </groups>
-    <test started-at="2021-11-30T23:37:16 ICT" name="TestNGConectDatabase" finished-at="2021-11-30T23:37:21 ICT" duration-ms="5166">
-      <class name="testDAO.TestConnectSQL">
-        <test-method is-config="true" signature="setUpTest()[pri:0, instance:testDAO.TestConnectSQL@710f4dc7]" started-at="2021-11-30T23:37:16 ICT" name="setUpTest" finished-at="2021-11-30T23:37:16 ICT" duration-ms="114" status="PASS">
+    <test started-at="2021-12-01T16:47:20 ICT" name="TestQuanLyDAO" finished-at="2021-12-01T16:47:21 ICT" duration-ms="631">
+      <class name="testDAO.TestQuanLyDAO">
+        <test-method signature="TC001_loadlstNV_Success()[pri:0, instance:testDAO.TestQuanLyDAO@1573f9fc]" started-at="2021-12-01T16:47:20 ICT" name="TC001_loadlstNV_Success" finished-at="2021-12-01T16:47:21 ICT" duration-ms="439" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpTest -->
-        <test-method signature="TCDB_TC001_Success(java.lang.String,java.lang.String)[pri:0, instance:testDAO.TestConnectSQL@710f4dc7]" started-at="2021-11-30T23:37:16 ICT" name="TCDB_TC001_Success" finished-at="2021-11-30T23:37:17 ICT" duration-ms="457" status="PASS">
+        </test-method> <!-- TC001_loadlstNV_Success -->
+        <test-method signature="TC002_loadlstSP_Success()[pri:0, instance:testDAO.TestQuanLyDAO@1573f9fc]" started-at="2021-12-01T16:47:21 ICT" name="TC002_loadlstSP_Success" finished-at="2021-12-01T16:47:21 ICT" duration-ms="42" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC002_loadlstSP_Success -->
+        <test-method signature="TC003_findNVByID_Success(java.lang.String)[pri:0, instance:testDAO.TestQuanLyDAO@1573f9fc]" started-at="2021-12-01T16:47:21 ICT" name="TC003_findNVByID_Success" finished-at="2021-12-01T16:47:21 ICT" duration-ms="61" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[sa]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
+                <![CDATA[hailv]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TCDB_TC001_Success -->
-        <test-method signature="TCDB_TC002_PasswordNull(java.lang.String,java.lang.String)[pri:0, instance:testDAO.TestConnectSQL@710f4dc7]" started-at="2021-11-30T23:37:17 ICT" name="TCDB_TC002_PasswordNull" finished-at="2021-11-30T23:37:18 ICT" duration-ms="1560" status="PASS">
+        </test-method> <!-- TC003_findNVByID_Success -->
+        <test-method signature="TC004_findNVByID_Failed()[pri:0, instance:testDAO.TestQuanLyDAO@1573f9fc]" started-at="2021-12-01T16:47:21 ICT" name="TC004_findNVByID_Failed" finished-at="2021-12-01T16:47:21 ICT" duration-ms="23" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC004_findNVByID_Failed -->
+        <test-method signature="TC004_findSPbyID_Failed(int)[pri:0, instance:testDAO.TestQuanLyDAO@1573f9fc]" started-at="2021-12-01T16:47:21 ICT" name="TC004_findSPbyID_Failed" finished-at="2021-12-01T16:47:21 ICT" duration-ms="27" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[sa]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
+                <![CDATA[0]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TCDB_TC002_PasswordNull -->
-        <test-method signature="TCDB_TC003_PasswordFalse(java.lang.String,java.lang.String)[pri:0, instance:testDAO.TestConnectSQL@710f4dc7]" started-at="2021-11-30T23:37:18 ICT" name="TCDB_TC003_PasswordFalse" finished-at="2021-11-30T23:37:19 ICT" duration-ms="807" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[sa]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[34]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TCDB_TC003_PasswordFalse -->
-        <test-method signature="TCDB_TC004_UserFalse(java.lang.String,java.lang.String)[pri:0, instance:testDAO.TestConnectSQL@710f4dc7]" started-at="2021-11-30T23:37:19 ICT" name="TCDB_TC004_UserFalse" finished-at="2021-11-30T23:37:20 ICT" duration-ms="862" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[das]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TCDB_TC004_UserFalse -->
-        <test-method signature="TCDB_TC005_UserNull(java.lang.String,java.lang.String)[pri:0, instance:testDAO.TestConnectSQL@710f4dc7]" started-at="2021-11-30T23:37:20 ICT" name="TCDB_TC005_UserNull" finished-at="2021-11-30T23:37:21 ICT" duration-ms="1261" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TCDB_TC005_UserNull -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testDAO.TestConnectSQL@710f4dc7]" started-at="2021-11-30T23:37:21 ICT" name="tearDown" finished-at="2021-11-30T23:37:21 ICT" duration-ms="61" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="AfterTest()[pri:0, instance:testDAO.TestConnectSQL@710f4dc7]" started-at="2021-11-30T23:37:21 ICT" name="AfterTest" finished-at="2021-11-30T23:37:21 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterTest -->
-      </class> <!-- testDAO.TestConnectSQL -->
-    </test> <!-- TestNGConectDatabase -->
+        </test-method> <!-- TC004_findSPbyID_Failed -->
+      </class> <!-- testDAO.TestQuanLyDAO -->
+    </test> <!-- TestQuanLyDAO -->
   </suite> <!-- Suite -->
 </testng-results>

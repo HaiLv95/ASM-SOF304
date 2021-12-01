@@ -29,143 +29,69 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 
 public class TestConnectSQL {
-	
-	ConnectSQL connect = new ConnectSQL();
-	Map<String, Object> testResult;
-	HSSFWorkbook workbook;
-	HSSFSheet sheet;
-	
-	@BeforeClass
-	public void setUpTest() {
-		workbook = new HSSFWorkbook();
-		sheet = workbook.createSheet("TestConnectSQL");
-		testResult = new LinkedHashMap<String, Object>();
-		testResult.put("1", new Object[] { "Testcase Name", "Testing Purpose", "Expected Output", "Actual Output" });
-	}
-	
+
+	Connection connection;
+
 	@AfterTest
 	public void AfterTest() {
-		connect.pass = null;
-		connect.user = null;
-	}
-	
-	@Parameters({"user", "pass"})
-	@Test
-	public void TCDB_TC001_Success(String user, String pass) {
-		try {
-			connect.user = user;
-			connect.pass = pass;
-			Connection connection = connect.Connect();
-			System.out.println("Connect success : " + connection);
-			assertTrue(connection != null);
-			testResult.put("2", new Object[] { "TCDB_TC001_ConectSuccess", "Database connection",
-					"Database connection successful", "Pass" });
-			connection.close();
-		} catch (Exception e) {
-			testResult.put("2", new Object[] { "TCDB_TC001_ConectSuccess", "Database connection",
-					"Database connection successful", "Fail" });
-		}
-	}
-	
-	@Parameters({"user", "passNull"})
-	@Test
-	public void TCDB_TC002_PasswordNull(String user, String passNull) {
-		try {
-			connect.user = user;
-			connect.pass = passNull;
-			Connection connection = connect.Connect();
-			System.out.println("Connect failed : "+ connection);
-			assertEquals(connection, null);
-			testResult.put("2", new Object[] { "TCDB_TC002_Failed", "Connection null",
-					"Connection null", "Pass" });
-			connection.close();;
-		} catch (Exception e) {
-			testResult.put("2", new Object[] { "TCDB_TC002_Failed", "Connection null",
-					"Connection null", "Failed" });
-		}
-	}
-	@Parameters({"user", "passF"})
-	@Test
-	public void TCDB_TC003_PasswordFalse(String user, String passF) {
-		try {
-			connect.user = user;
-			connect.pass = passF;
-			Connection connection = connect.Connect();
-			System.out.println("Connect failed : "+ connection);
-			assertEquals(connection, null);
-			testResult.put("2", new Object[] { "TCDB_TC002_Failed", "Connection null",
-					"Connection null", "Pass" });
-			connection.close();;
-		} catch (Exception e) {
-			testResult.put("2", new Object[] { "TCDB_TC002_Failed", "Connection null",
-					"Connection null", "Failed" });
-		}
-	}
-	@Parameters({"userF", "pass"})
-	@Test
-	public void TCDB_TC004_UserFalse(String userF, String pass) {
-		try {
-			connect.user = userF;
-			connect.pass = pass;
-			Connection connection = connect.Connect();
-			System.out.println("Connect failed : "+ connection);
-			assertEquals(connection, null);
-			testResult.put("2", new Object[] { "TCDB_TC002_Failed", "Connection null",
-					"Connection null", "Pass" });
-			connection.close();;
-		} catch (Exception e) {
-			testResult.put("2", new Object[] { "TCDB_TC002_Failed", "Connection null",
-					"Connection null", "Failed" });
-		}
-	}
-	@Parameters({"userNull", "pass"})
-	@Test
-	public void TCDB_TC005_UserNull(String userNull, String pass) {
-		try {
-			connect.user = userNull;
-			connect.pass = pass;
-			Connection connection = connect.Connect();
-			System.out.println("Connect failed : "+ connection);
-			assertEquals(connection, null);
-			testResult.put("2", new Object[] { "TCDB_TC002_Failed", "Connection null",
-					"Connection null", "Pass" });
-			connection.close();;
-		} catch (Exception e) {
-			testResult.put("2", new Object[] { "TCDB_TC002_Failed", "Connection null",
-					"Connection null", "Failed" });
-		}
-	}
-	
-	@AfterClass
-	public void tearDown(){
-		
-		Set<String> keySet = testResult.keySet();
-		int index = 0;
-		for (String key : keySet) {
-			Row row = sheet.createRow(index ++);
-			Object[] results = (Object[]) testResult.get(key);
-			int col = 0;
-			for (Object result : results) {
-				Cell cell = row.createCell(col++);
-				if (result instanceof Date) {
-					cell.setCellValue((Date) result);
-				} else if (result instanceof Boolean) {
-					cell.setCellValue((Boolean) result);
-				} else if (result instanceof String) {
-					cell.setCellValue((String) result);
-				} else if (result instanceof Double) {
-					cell.setCellValue((Double) result);
-				}
-			}
+		ConnectSQL.pass = null;
+		ConnectSQL.user = null;
+		if (ConnectSQL.Connect() != null) {
 			try {
-				FileOutputStream out = new FileOutputStream(new File("C:\\Users\\hai95\\OneDrive\\Desktop\\SOF304-ASM\\TestReport\\TestConnectSQL.xls"));
-				workbook.write(out);
-				System.out.println("success");
-				out.close();
-			} catch (IOException e) {
+				ConnectSQL.Connect().close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
+
+	}
+
+	@Parameters({ "user", "pass" })
+	@Test
+	public void TCDB_TC001_Success(String user, String pass) {
+			ConnectSQL.user = user;
+			ConnectSQL.pass = pass;
+			connection = ConnectSQL.Connect();
+			assertTrue(connection != null);
+	}
+
+//	@Parameters({ "user", "passNull" })
+//	@Test(expectedExceptions = SQLException.class)
+//	public void TCDB_TC002_PasswordNull(String user, String passNull) {
+//		ConnectSQL.user = user;
+//		ConnectSQL.pass = passNull;
+//		connection = ConnectSQL.Connect();
+//		assertEquals(connection, null);
+//	}
+
+	@Parameters({ "user", "passF" })
+	@Test
+	public void TCDB_TC003_PasswordFalse(String user, String passF) {
+		ConnectSQL.user = user;
+		ConnectSQL.pass = passF;
+		connection = ConnectSQL.Connect();
+		assertEquals(connection, null);
+	}
+
+	@Parameters({ "userF", "pass" })
+	@Test
+	public void TCDB_TC004_UserFalse(String userF, String pass) {
+		ConnectSQL.user = userF;
+		ConnectSQL.pass = pass;
+		connection = ConnectSQL.Connect();
+		assertEquals(connection, null);
+	}
+
+	@Parameters({ "userNull", "pass" })
+	@Test
+	public void TCDB_TC005_UserNull(String userNull, String pass) {
+
+		ConnectSQL.user = userNull;
+		ConnectSQL.pass = pass;
+		connection = ConnectSQL.Connect();
+		assertEquals(connection, null);
+
 	}
 
 }

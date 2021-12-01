@@ -46,6 +46,7 @@ public class ConnectSQL {
             con = DriverManager.getConnection("jdbc:sqlserver://" + localhost + ":1433;databaseName=QLSUNNY", user, pass);
 
         } catch (UnknownHostException ex) {
+        	con = null;
             JOptionPane.showMessageDialog(null, "Failed: Not foud localhost");
         } catch (Exception e) {
         	con = null;
