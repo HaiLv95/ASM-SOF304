@@ -16,22 +16,7 @@ import sunnycssw.DAO.QuanLyDAO;
 
 public class TestQuanLyDAO {
 	QuanLyDAO qlDAO = new QuanLyDAO();
-//	@BeforeClass
-//	public void Setup() {
-//		
-//	}
-//	@AfterClass
-//	public void Teardown() {
-//		
-//	}
-//	@BeforeTest
-//	public void Beforetest() {
-//		
-//	}
-//	@AfterTest
-//	public void Aftertest() {
-//		
-//	}
+
   @Test
   public void TC001_loadlstNV_Success() {
 		Assert.assertTrue(qlDAO.loadlstNV() != null);
@@ -56,6 +41,21 @@ public class TestQuanLyDAO {
   @Test
   public void TC004_findSPbyID_Failed(int IDSpFailed) throws SQLException{  
 	  Assert.assertTrue(qlDAO.findSPbyID(IDSpFailed) == null);
+  }
+  @Parameters("IDLSp")
+  @Test
+  public void TC005_findLoaiSPbyID_Success(int IDLSp) throws SQLException{  
+	  Assert.assertTrue(qlDAO.fingLSPbyID(IDLSp) == null);
+  }
+  
+  @Parameters("IDLSpFailed")
+  @Test
+  public void TC006_findLoaiSPbyID_Failed(int IDLSpFailed) throws SQLException{  
+	  Assert.assertTrue(qlDAO.fingLSPbyID(IDLSpFailed) == null);
+  }
+  @Test
+  public void TC007_findAddNV_Success(){  
+	 
   }
   
 }

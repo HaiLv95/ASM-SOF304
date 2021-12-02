@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-12-01T16:47:20 ICT" name="Suite" finished-at="2021-12-01T16:47:21 ICT" duration-ms="631">
+  <suite started-at="2021-12-02T14:20:25 ICT" name="Suite" finished-at="2021-12-02T14:20:26 ICT" duration-ms="679">
     <groups>
     </groups>
-    <test started-at="2021-12-01T16:47:20 ICT" name="TestQuanLyDAO" finished-at="2021-12-01T16:47:21 ICT" duration-ms="631">
+    <test started-at="2021-12-02T14:20:25 ICT" name="TestQuanLyDAO" finished-at="2021-12-02T14:20:26 ICT" duration-ms="679">
       <class name="testDAO.TestQuanLyDAO">
-        <test-method signature="TC001_loadlstNV_Success()[pri:0, instance:testDAO.TestQuanLyDAO@1573f9fc]" started-at="2021-12-01T16:47:20 ICT" name="TC001_loadlstNV_Success" finished-at="2021-12-01T16:47:21 ICT" duration-ms="439" status="PASS">
+        <test-method signature="TC001_loadlstNV_Success()[pri:0, instance:testDAO.TestQuanLyDAO@1573f9fc]" started-at="2021-12-02T14:20:25 ICT" name="TC001_loadlstNV_Success" finished-at="2021-12-02T14:20:26 ICT" duration-ms="496" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC001_loadlstNV_Success -->
-        <test-method signature="TC002_loadlstSP_Success()[pri:0, instance:testDAO.TestQuanLyDAO@1573f9fc]" started-at="2021-12-01T16:47:21 ICT" name="TC002_loadlstSP_Success" finished-at="2021-12-01T16:47:21 ICT" duration-ms="42" status="PASS">
+        <test-method signature="TC002_loadlstSP_Success()[pri:0, instance:testDAO.TestQuanLyDAO@1573f9fc]" started-at="2021-12-02T14:20:26 ICT" name="TC002_loadlstSP_Success" finished-at="2021-12-02T14:20:26 ICT" duration-ms="43" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC002_loadlstSP_Success -->
-        <test-method signature="TC003_findNVByID_Success(java.lang.String)[pri:0, instance:testDAO.TestQuanLyDAO@1573f9fc]" started-at="2021-12-01T16:47:21 ICT" name="TC003_findNVByID_Success" finished-at="2021-12-01T16:47:21 ICT" duration-ms="61" status="PASS">
+        <test-method signature="TC003_findNVByID_Success(java.lang.String)[pri:0, instance:testDAO.TestQuanLyDAO@1573f9fc]" started-at="2021-12-02T14:20:26 ICT" name="TC003_findNVByID_Success" finished-at="2021-12-02T14:20:26 ICT" duration-ms="53" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -26,11 +26,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC003_findNVByID_Success -->
-        <test-method signature="TC004_findNVByID_Failed()[pri:0, instance:testDAO.TestQuanLyDAO@1573f9fc]" started-at="2021-12-01T16:47:21 ICT" name="TC004_findNVByID_Failed" finished-at="2021-12-01T16:47:21 ICT" duration-ms="23" status="PASS">
+        <test-method signature="TC004_findNVByID_Failed()[pri:0, instance:testDAO.TestQuanLyDAO@1573f9fc]" started-at="2021-12-02T14:20:26 ICT" name="TC004_findNVByID_Failed" finished-at="2021-12-02T14:20:26 ICT" duration-ms="27" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC004_findNVByID_Failed -->
-        <test-method signature="TC004_findSPbyID_Failed(int)[pri:0, instance:testDAO.TestQuanLyDAO@1573f9fc]" started-at="2021-12-01T16:47:21 ICT" name="TC004_findSPbyID_Failed" finished-at="2021-12-01T16:47:21 ICT" duration-ms="27" status="PASS">
+        <test-method signature="TC004_findSPbyID_Failed(int)[pri:0, instance:testDAO.TestQuanLyDAO@1573f9fc]" started-at="2021-12-02T14:20:26 ICT" name="TC004_findSPbyID_Failed" finished-at="2021-12-02T14:20:26 ICT" duration-ms="21" status="PASS">
           <params>
             <param index="0">
               <value>

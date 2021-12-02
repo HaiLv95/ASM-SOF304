@@ -5,6 +5,8 @@
   	<parameter name="IDNull" value=""></parameter>
   	<parameter name="IDSp" value="1"></parameter>
   	<parameter name="IDSpFailed" value="0"></parameter>
+  	<parameter name="IDLSp" value="1"></parameter>
+  	<parameter name="IDLSpFailed" value="0"></parameter>
     <classes>
       <class name="testDAO.TestQuanLyDAO"/>
     </classes>
